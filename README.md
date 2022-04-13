@@ -7,7 +7,7 @@
 **[[website](http://swoh.web.engr.illinois.edu/pacgan.html)]**
 **[[interview (youtube)](https://www.youtube.com/watch?v=MqdhDdD4-Z0)]**
 **[[code](https://github.com/fjxmlzn/PacGAN)]**
-
+**[[fork](https://github.com/mwelfert/PacGAN)]**
 
 **Authors:** [Zinan Lin](http://www.andrew.cmu.edu/user/zinanl/), [Ashish Khetan](http://web.engr.illinois.edu/~khetan2/), [Giulia Fanti](https://www.andrew.cmu.edu/user/gfanti/), [Sewoong Oh](http://web.engr.illinois.edu/~swoh/)
 
