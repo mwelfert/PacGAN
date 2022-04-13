@@ -11,8 +11,44 @@ from fuel.datasets import H5PYDataset, IndexableDataset
 from fuel.transformers.defaults import uint8_pixels_to_floatX
 from fuel.utils import find_in_data_path
 
-from ali.utils import as_array
-from ali.datasets import GaussianMixtureDistribution
+
+# importing sys
+import sys
+  
+# adding Folder_2/subfolder to the system path
+sys.path.insert(0, '/home/mwelfert/PacGAN-alpha-loss/ALI/ali/')
+  
+from utils import as_array
+from datasets import GaussianMixtureDistribution
+
+# import importlib.util
+  
+# # specify the module that needs to be 
+# # imported relative to the path of the 
+# # module
+# spec=importlib.util.spec_from_file_location("ali.utils","/home/mwelfert/PacGAN-alpha-loss/ALI/ali/")
+  
+# # creates a new module based on spec
+# ali_utils = importlib.util.module_from_spec(spec)
+  
+# # executes the module in its own namespace
+# # when a module is imported or reloaded.
+# spec.loader.exec_module(ali_utils)
+
+# from ali.ali_utils import as_array
+
+# # specify the module that needs to be 
+# # imported relative to the path of the 
+# # module
+# spec=importlib.util.spec_from_file_location("ali.datasets","/home/mwelfert/PacGAN-alpha-loss/ALI/ali/")
+  
+# # creates a new module based on spec
+# ali_data = importlib.util.module_from_spec(spec)
+  
+# # executes the module in its own namespace
+# # when a module is imported or reloaded.
+# spec.loader.exec_module(ali_data)
+# from ali.ali_data import GaussianMixtureDistribution
 
 class VEEGAN1200DPackingMixture(IndexableDataset):
     def __init__(self, num_examples, num_packings, **kwargs):

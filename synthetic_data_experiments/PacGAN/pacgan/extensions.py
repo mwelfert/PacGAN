@@ -9,7 +9,8 @@ from theano.sandbox.rng_mrg import MRG_RandomStreams
 from datetime import datetime
 from math import log
 
-import cPickle as pickle
+# import cPickle as pickle
+import pickle
 
 from pacgan.distributions import circle_gaussian_mixture
 
@@ -40,7 +41,7 @@ class ModelLogger(SimpleExtension):
         """
         logger.info("ModelLogger has started")
         path = os.path.join(self.folder, "{}{}.tar".format(self.file_prefix, self.counter))
-        with open(path, 'wb') as f:
+        with open(path, 'w') as f:
             dump(self.main_loop.model, f, use_cpickle=self.use_cpickle)
         logger.info("ModelLogger has finished")
         self.counter += 1
@@ -130,7 +131,7 @@ class MetricLogger(SimpleExtension):
         for i in range(len(self.means)):
             self.norms.append(scipy.stats.norm(loc = self.means[i], scale = numpy.diag(self.variances[i])))
         
-        with open(os.path.join(self.folder, "{}.csv".format(self.metric_file_prefix)), "ab") as csv_file:
+        with open(os.path.join(self.folder, "{}.csv".format(self.metric_file_prefix)), "a") as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames = self.field_names)
             writer.writeheader()
         
@@ -177,7 +178,7 @@ class MetricLogger(SimpleExtension):
         #print(datetime.now().strftime("%H:%M:%S.%f"))
          
         # output results
-        with open(os.path.join(self.folder, "{}.csv".format(self.metric_file_prefix)), "ab") as csv_file:
+        with open(os.path.join(self.folder, "{}.csv".format(self.metric_file_prefix)), "a") as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames=self.field_names)
             writer.writerow({
                 "epoch": self.counter,  

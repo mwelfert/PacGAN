@@ -4,8 +4,6 @@ from pacgan.distributions import circle_gaussian_mixture
 from pacgan.streams import create_packing_gaussian_mixture_data_streams
 from pacgan.extensions import ModelLogger, GraphLogger, MetricLogger
 
-from ali.algorithms import ali_algorithm
-from ali.utils import as_array
 
 import numpy, os, random, fuel, blocks
 from theano import tensor, function
@@ -25,6 +23,16 @@ from blocks.main_loop import MainLoop
 from blocks.roles import INPUT
 from blocks.select import Selector
 
+#from ali.algorithms import ali_algorithm
+#from ali.utils import as_array
+# importing sys
+import sys
+  
+# adding Folder_2/subfolder to the system path
+sys.path.insert(0, '/home/mwelfert/PacGAN-alpha-loss/ALI/ali/')
+  
+from utils import as_array
+from algorithms import ali_algorithm
 
 class PacGANTask(GPUTask):
     def required_env(self):

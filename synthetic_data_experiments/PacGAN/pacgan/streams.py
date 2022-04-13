@@ -4,7 +4,7 @@ from fuel.datasets.toy import Spiral
 from fuel.schemes import ShuffledScheme
 from fuel.streams import DataStream
 
-from datasets import GaussianPackingMixture, VEEGAN1200DPackingMixture
+from pacgan.datasets import GaussianPackingMixture, VEEGAN1200DPackingMixture
 
 def create_packing_VEEGAN1200D_data_streams(num_packings, batch_size, monitoring_batch_size, rng=None, num_examples=100000, sources=('features', )):
 
